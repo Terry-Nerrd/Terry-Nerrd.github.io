@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Street King",
+        "price": "R950",
+        "description": "Bold, leather, and citrus.",
+        "image": "images/king.jpg"
+    },
+    {
+        "name": "Neon Night",
+        "price": "R750",
+        "description": "Sweet vanilla and spice.",
+        "image": "images/night.jpg"
+    }
+]
+
