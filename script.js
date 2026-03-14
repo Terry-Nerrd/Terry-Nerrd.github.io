@@ -1,36 +1,38 @@
 let allProducts = [];
 
-// 1. Fetch Catalog
+// 1. Fetch and Display Catalog
 async function loadCatalog() {
     try {
         const res = await fetch('catalog.json');
-        if (!res.ok) throw new Error('Could not find catalog.json');
         allProducts = await res.json();
         renderProducts(allProducts);
-    } catch (e) { 
-        console.error("Load error", e);
-        document.getElementById('cologne-catalog').innerHTML = "<p>Loading colognes... Please check back soon!</p>";
-    }
+    } catch (e) { console.error("Load error", e); }
 }
 
 function renderProducts(items) {
     const container = document.getElementById('cologne-catalog');
-    if (items.length === 0) {
-        container.innerHTML = "<p>No colognes found matching your search. 🔍</p>";
-        return;
-    }
-    container.innerHTML = items.map(item => `
-        <div class="product-card">
-            <img src="${item.image}" alt="${item.name}" loading="lazy">
-            <h3>${item.name}</h3>
-            <p>${item.description}</p>
-            <span class="price">${item.price}</span>
-            <button class="buy-btn" onclick="alert('Order Feature Coming Soon for ${item.name}!')">GET IT NOW 🛒</button>
-        </div>
-    `).join('');
+    const myPhone = "27682541764"; // Your SA number in international format
+
+    container.innerHTML = items.map(item => {
+        // Creates a clean WhatsApp order message
+        const orderText = encodeURIComponent(`Hi Terry-Nerrds! 🧴 I'd like to order:\n\n*Product:* ${item.name}\n*Price:* ${item.price}\n\nPlease let me know how to pay! 🌊`);
+        const whatsappLink = `https://wa.me{myPhone}?text=${orderText}`;
+
+        return `
+            <div class="product-card">
+                <img src="${item.image}" alt="${item.name}" loading="lazy">
+                <h3>${item.name}</h3>
+                <p>${item.description}</p>
+                <span class="price">${item.price}</span>
+                <a href="${whatsappLink}" target="_blank" class="buy-btn" style="text-decoration:none; display:block;">
+                    ORDER ON WHATSAPP 🛒
+                </a>
+            </div>
+        `;
+    }).join('');
 }
 
-// 2. Optimized Search Logic
+// 2. Search Logic
 const searchInput = document.getElementById('cologne-search');
 if (searchInput) {
     searchInput.addEventListener('input', (e) => {
@@ -43,19 +45,41 @@ if (searchInput) {
     });
 }
 
-// 3. Clerk Auth Management
-window.addEventListener('load', async () => {
-    try {
-        await Clerk.load();
-        const authDiv = document.getElementById('user-auth-ui');
-        if (Clerk.user) {
-            Clerk.mountUserButton(authDiv);
-        } else {
-            authDiv.innerHTML = `<button onclick="Clerk.openSignIn()" style="background:transparent; color:#00fbff; border:1px solid #00fbff; padding:8px 15px; border-radius:20px; cursor:pointer; font-weight:bold;">LOGIN</button>`;
+// 3. Formspree Ajax Fix (Stops the redirect)
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault(); // This stops the page from redirecting
+        
+        const status = document.getElementById('form-status');
+        const btn = document.getElementById('submit-btn');
+        const formData = new FormData(contactForm);
+        
+        btn.disabled = true;
+        btn.innerText = "Sending...";
+
+        try {
+            const response = await fetch("https://formspree.io", {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                status.style.display = "block";
+                contactForm.reset();
+                btn.innerText = "Sent!";
+            } else {
+                alert("Oops! There was a problem submitting your form.");
+                btn.disabled = false;
+                btn.innerText = "Send Message";
+            }
+        } catch (error) {
+            alert("Connection error. Please try again.");
+            btn.disabled = false;
+            btn.innerText = "Send Message";
         }
-    } catch (err) {
-        console.warn("Clerk Auth not ready yet.");
-    }
-});
+    });
+}
 
 loadCatalog();

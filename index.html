@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terry-Nerrds Colognes | Fresh & Urban</title>
-    
-    <!-- Link to your CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Analytics Integration -->
+    <!-- Google Analytics -->
     <script async src="https://googletagmanager.com"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,12 +15,11 @@
       gtag('config', 'G-6LL5WXQTW8');
     </script>
 
-    <!-- Clerk Authentication SDK -->
+    <!-- Clerk Authentication -->
     <script async crossorigin="anonymous" src="https://accounts.dev" data-clerk-publishable-key="pk_test_cmVzb2x2ZWQtYmFzaWxpc2stODUuY2xlcmsuYWNjb3VudHMuZGV2JA"></script>
 </head>
 <body>
 
-    <!-- Main Navigation -->
     <nav class="main-nav">
         <div class="logo">TERRY-NERRDS 🧴</div>
         <ul class="nav-links">
@@ -30,47 +27,43 @@
             <li><a href="about.html">Our Story</a></li>
             <li><a href="legal.html">Legal & Ingredients</a></li>
         </ul>
-        <!-- This is where the Login button or User Profile will appear -->
         <div id="user-auth-ui"></div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero-section">
         <h1>STAY FRESH.</h1>
         <p class="tagline">Urban Colognes for the Bold by Terry Nerrd. 🌊</p>
         
         <div class="search-container">
-            <input type="text" id="cologne-search" placeholder="Search (e.g. 'Male', 'Vanilla', 'Unisex')..." aria-label="Search Catalog" autocomplete="off">
+            <input type="text" id="cologne-search" placeholder="Search (e.g. 'Male', 'Vanilla')..." autocomplete="off">
         </div>
     </header>
 
-    <!-- Product Catalog -->
     <main>
+        <!-- Catalog Grid -->
         <section id="cologne-catalog">
-            <!-- Products from catalog.json will load here via script.js -->
             <p style="text-align:center;">Loading the freshest scents...</p>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section with AJAX Fix -->
         <section class="contact-zone">
             <h3>Hit Us Up 🎤</h3>
-            <p>Questions about an order? Drop us a message.</p>
-            
-            <!-- Formspree Integration -->
-            <form action="https://formspree.io" method="POST">
-                <input type="email" name="email" placeholder="Your Email Address" required>
-                <textarea name="message" rows="4" placeholder="What's on your mind?" required></textarea>
-                <button type="submit" class="submit-btn">Send Message</button>
+            <form id="contact-form">
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <textarea name="message" id="message" placeholder="What's on your mind?" required></textarea>
+                <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
             </form>
+            <p id="form-status" style="display:none; color: #00fbff; margin-top: 15px; font-weight: bold;">
+                Message sent! We'll get back to you soon. 🔥
+            </p>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #666; border-top: 1px solid #222;">
+    <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: #666; border-top: 1px solid #1a1a1a;">
         &copy; 2024 Terry Nerrd Company. All Rights Reserved.
     </footer>
 
-    <!-- Link to your JavaScript -->
+    <!-- Script at the bottom -->
     <script src="script.js"></script>
 </body>
 </html>
