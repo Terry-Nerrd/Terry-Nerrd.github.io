@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terry-Nerrds Colognes | Fresh & Urban</title>
+    
+    <!-- Link to your CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics Integration -->
     <script async src="https://googletagmanager.com"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -14,35 +16,61 @@
       gtag('js', new Date());
       gtag('config', 'G-6LL5WXQTW8');
     </script>
+
+    <!-- Clerk Authentication SDK -->
+    <script async crossorigin="anonymous" src="https://accounts.dev" data-clerk-publishable-key="pk_test_cmVzb2x2ZWQtYmFzaWxpc2stODUuY2xlcmsuYWNjb3VudHMuZGV2JA"></script>
 </head>
 <body>
 
-    <header>
-        <div id="user-auth-ui"></div> <!-- Clerk Login Button -->
-        <h1>TERRY-NERRDS 🧴</h1>
-        <p class="tagline">Stay Fresh. Stay Bold. 🌊</p>
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="logo">TERRY-NERRDS 🧴</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Shop</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="legal.html">Legal & Ingredients</a></li>
+        </ul>
+        <!-- This is where the Login button or User Profile will appear -->
+        <div id="user-auth-ui"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <h1>STAY FRESH.</h1>
+        <p class="tagline">Urban Colognes for the Bold by Terry Nerrd. 🌊</p>
+        
+        <div class="search-container">
+            <input type="text" id="cologne-search" placeholder="Search (e.g. 'Male', 'Vanilla', 'Unisex')..." aria-label="Search Catalog" autocomplete="off">
+        </div>
     </header>
 
+    <!-- Product Catalog -->
     <main>
-        <section id="cologne-catalog"></section>
+        <section id="cologne-catalog">
+            <!-- Products from catalog.json will load here via script.js -->
+            <p style="text-align:center;">Loading the freshest scents...</p>
+        </section>
 
+        <!-- Contact Section -->
         <section class="contact-zone">
             <h3>Hit Us Up 🎤</h3>
+            <p>Questions about an order? Drop us a message.</p>
+            
+            <!-- Formspree Integration -->
             <form action="https://formspree.io" method="POST">
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="What's on your mind?"></textarea>
-                <button type="submit">Send Message</button>
+                <input type="email" name="email" placeholder="Your Email Address" required>
+                <textarea name="message" rows="4" placeholder="What's on your mind?" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </section>
     </main>
 
-    <!-- Clerk SDK -->
-    <script async crossorigin="anonymous" 
-        src="https://accounts.dev" 
-        data-clerk-publishable-key="pk_test_cmVzb2x2ZWQtYmFzaWxpc2stODUuY2xlcmsuYWNjb3VudHMuZGV2JA">
-    </script>
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 20px; font-size: 0.8rem; color: #666; border-top: 1px solid #222;">
+        &copy; 2024 Terry Nerrd Company. All Rights Reserved.
+    </footer>
 
+    <!-- Link to your JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
-

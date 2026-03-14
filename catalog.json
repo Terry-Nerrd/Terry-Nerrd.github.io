@@ -2,14 +2,145 @@
     {
         "name": "Street King",
         "price": "R950",
-        "description": "Bold, leather, and citrus.",
+        "description": "Bold, leather, and citrus. (50ml)",
         "image": "images/king.jpg"
     },
     {
         "name": "Neon Night",
         "price": "R750",
-        "description": "Sweet vanilla and spice.",
+        "description": "Sweet vanilla and spice. (50ml)",
         "image": "images/night.jpg"
+    },
+    {
+        "name": "Royal Vibe",
+        "price": "R169",
+        "description": "Wild Berry & Lily - Female (50ml)",
+        "image": "images/royal_vibe.jpg"
+    },
+    {
+        "name": "Wild Aura",
+        "price": "R168",
+        "description": "Lavender Mist - Female (50ml)",
+        "image": "images/wild_aura.jpg"
+    },
+    {
+        "name": "Frozen Aura",
+        "price": "R166",
+        "description": "Fresh Cotton - Unisex (50ml)",
+        "image": "images/frozen_aura.jpg"
+    },
+    {
+        "name": "Pure Essence",
+        "price": "R169",
+        "description": "Oud & Leather - Male (50ml)",
+        "image": "images/pure_essence.jpg"
+    },
+    {
+        "name": "Mystic Spirit",
+        "price": "R160",
+        "description": "Green Apple & Mint - Unisex (50ml)",
+        "image": "images/mystic_spirit.jpg"
+    },
+    {
+        "name": "Midnight Shadow",
+        "price": "R151",
+        "description": "Cedarwood & Spice - Male (50ml)",
+        "image": "images/midnight_shadow.jpg"
+    },
+    {
+        "name": "Silver Spirit",
+        "price": "R176",
+        "description": "Rose & Jasmine - Female (50ml)",
+        "image": "images/silver_spirit.jpg"
+    },
+    {
+        "name": "Midnight Pulse",
+        "price": "R170",
+        "description": "Peach & Honeysuckle - Female (50ml)",
+        "image": "images/midnight_pulse.jpg"
+    },
+    {
+        "name": "Frozen Pulse",
+        "price": "R165",
+        "description": "Bergamot & Sage - Male (50ml)",
+        "image": "images/frozen_pulse.jpg"
+    },
+    {
+        "name": "Pure Spirit",
+        "price": "R162",
+        "description": "Cedarwood & Spice - Male (50ml)",
+        "image": "images/pure_spirit.jpg"
+    },
+    {
+        "name": "Midnight Shift",
+        "price": "R178",
+        "description": "Rose & Jasmine - Female (50ml)",
+        "image": "images/midnight_shift.jpg"
+    },
+    {
+        "name": "Dark Aura",
+        "price": "R174",
+        "description": "Wild Berry & Lily - Female (50ml)",
+        "image": "images/dark_aura.jpg"
+    },
+    {
+        "name": "Urban Spirit",
+        "price": "R178",
+        "description": "Rose & Jasmine - Female (50ml)",
+        "image": "images/urban_spirit.jpg"
+    },
+    {
+        "name": "Royal Pulse",
+        "price": "R159",
+        "description": "Cherry Blossom - Female (50ml)",
+        "image": "images/royal_pulse.jpg"
+    },
+    {
+        "name": "Urban Pulse",
+        "price": "R166",
+        "description": "Green Apple & Mint - Unisex (50ml)",
+        "image": "images/urban_pulse.jpg"
+    },
+    {
+        "name": "Mystic Essence",
+        "price": "R155",
+        "description": "White Tea & Ginger - Unisex (50ml)",
+        "image": "images/mystic_essence.jpg"
+    },
+    {
+        "name": "Royal Essence",
+        "price": "R173",
+        "description": "Citrus Splash - Unisex (50ml)",
+        "image": "images/royal_essence.jpg"
+    },
+    {
+        "name": "Frozen Legend",
+        "price": "R173",
+        "description": "Bergamot & Sage - Male (50ml)",
+        "image": "images/frozen_legend.jpg"
+    },
+    {
+        "name": "Midnight Edge",
+        "price": "R177",
+        "description": "Rose & Jasmine - Female (50ml)",
+        "image": "images/midnight_edge.jpg"
+    },
+    {
+        "name": "Silver Vibe",
+        "price": "R162",
+        "description": "Lavender Mist - Female (50ml)",
+        "image": "images/silver_vibe.jpg"
+    },
+    {
+        "name": "Midnight Drift",
+        "price": "R157",
+        "description": "Eucalyptus & Rain - Unisex (50ml)",
+        "image": "images/midnight_drift.jpg"
+    },
+    {
+        "name": "Frozen Shift",
+        "price": "R162",
+        "description": "White Tea & Ginger - Unisex (50ml)",
+        "image": "images/frozen_shift.jpg"
     }
 ]
-
